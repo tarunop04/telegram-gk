@@ -232,9 +232,13 @@ def main():
         print("ERROR: CHANNEL_ID ya GROUP_ID set nahi hai.", file=sys.stderr)
         sys.exit(1)
 
+    # Default: sirf quiz post hota hai. Facts wala post bhi chahiye to
+    # POST_FACTS=1 set kar do.
+    post_facts = os.environ.get("POST_FACTS", "0").lower() in ("1", "true", "yes", "on")
     for chat_id in targets:
-        print(f"Post bhej rahe hain -> {chat_id}")
-        send_text(chat_id, post_text)
+        print(f"Quiz bhej rahe hain -> {chat_id}")
+        if post_facts:
+            send_text(chat_id, post_text)
         send_quiz(chat_id, quiz)
 
     history.append(quiz["question"])
