@@ -1,0 +1,43 @@
+name: Telegram GK Auto Post
+
+on:
+  schedule:
+    # Time UTC me hota hai. IST = UTC + 5:30.
+    - cron: "30 3 * * *"   # subah 9:00 IST
+    - cron: "30 12 * * *"  # shaam 6:00 IST
+  workflow_dispatch:        # manually "Run workflow" button se bhi chala sakte ho
+
+permissions:
+  contents: write           # history.json wapas commit karne ke liye
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate aur post karo
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          GROUP_ID: ${{ secrets.GROUP_ID }}
+          # MODEL: claude-haiku-4-5   # cost kam karna ho to ye uncomment karo
+        run: python post.py
+
+      - name: history.json wapas save karo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add history.json
+          git commit -m "Update history [skip ci]" || echo "Koi badlav nahi"
+          git push || echo "Push skip"
