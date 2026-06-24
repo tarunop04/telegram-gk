@@ -1,8 +1,12 @@
 # 📚 Telegram GK Auto-Poster
 
-Ek automation jo **Claude AI** se roz GK / Current Affairs content + quiz banata hai
-aur tumhare **Telegram channel + group** me apne aap post kar deta hai —
+Ek automation jo **har 1 ghante** GK / Current Affairs content + quiz
+tumhare **Telegram channel** me apne aap post karta hai —
 **GitHub Actions** par 24/7 free chalta hai (PC band ho tab bhi).
+
+Do mode:
+- **FREE (default):** built-in content bank (32+ GK topics) — koi API key nahi chahiye.
+- **AI mode (optional):** OpenAI ya free Groq key daalo → fresh AI content.
 
 Har run me jata hai:
 - Ek "Daily GK" post (5-6 facts, Hindi me)
@@ -43,24 +47,33 @@ Do option:
 
 1. Ek **naya GitHub repo** banao aur ye saari files usme daal do (push karo).
 2. Repo me jao → **Settings → Secrets and variables → Actions → New repository secret**.
-   Ye 4 secrets add karo:
+
+   **FREE mode (default) — sirf ye 2 secrets:**
+
+   | Secret name | Value |
+   |---|---|
+   | `TELEGRAM_BOT_TOKEN` | BotFather wala token |
+   | `CHANNEL_ID` | `@yourchannel` ya `-100...` |
+
+   **AI mode chahiye to ye bhi add karo (optional):**
 
    | Secret name | Value |
    |---|---|
    | `OPENAI_API_KEY` | OpenAI ya Groq ki key |
-   | `OPENAI_BASE_URL` | Groq use kar rahe ho to `https://api.groq.com/openai/v1` (OpenAI ke liye skip) |
-   | `OPENAI_MODEL` | Groq: `llama-3.3-70b-versatile` (OpenAI ke liye skip) |
-   | `TELEGRAM_BOT_TOKEN` | BotFather wala token |
-   | `CHANNEL_ID` | `@yourchannel` ya `-100...` |
-   | `GROUP_ID` | group ki `-100...` id (na ho to skip) |
+   | `OPENAI_BASE_URL` | Groq ke liye `https://api.groq.com/openai/v1` |
+   | `OPENAI_MODEL` | Groq ke liye `llama-3.3-70b-versatile` |
+   | `GROUP_ID` | group ki `-100...` id (optional) |
 
 3. **Actions** tab me jao → workflow enable karo.
 4. Test ke liye: **Actions → "Telegram GK Auto Post" → Run workflow** dabao.
    Channel me post aa jaye to setup sahi hai ✅
 
-Iske baad ye **roz subah 9 baje aur shaam 6 baje (IST)** apne aap post karega.
-Time badalna ho to [`.github/workflows/post.yml`](.github/workflows/post.yml) me `cron`
-edit kar do (yaad rahe time **UTC** me likhna hai, IST = UTC + 5:30).
+Iske baad ye **har 1 ghante** apne aap post karega.
+Frequency badalni ho to [`.github/workflows/post.yml`](.github/workflows/post.yml) me `cron`
+edit kar do (jaise `0 */2 * * *` = har 2 ghante).
+
+> Note: GitHub Actions ka schedule kabhi-kabhi thoda late (5-15 min) chal sakta hai —
+> ye normal hai. Exact-to-the-minute timing guarantee nahi hoti.
 
 ---
 

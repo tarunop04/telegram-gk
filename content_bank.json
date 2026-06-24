@@ -254,5 +254,261 @@
       "correct_index": 1,
       "explanation": "CPU (Central Processing Unit) ko computer ka dimaag kehte hain."
     }
+  },
+  {
+    "title": "💊 Vitamins aur Sehat",
+    "facts": [
+      "Vitamin C: Amla, nimbu, santra me — rog-pratirodhak kshamata badhata hai.",
+      "Vitamin D: dhoop (sunlight) se milta hai — haddiyon ke liye zaroori.",
+      "Vitamin A: aankhon ke liye — gajar me bharpoor.",
+      "Vitamin C ki kami se 'Scurvy' rog hota hai.",
+      "Vitamin D ki kami se bachchon me 'Rickets' hota hai."
+    ],
+    "quiz": {
+      "question": "Haddiyon (bones) ke liye sabse zaroori vitamin kaun sa hai?",
+      "options": ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+      "correct_index": 3,
+      "explanation": "Vitamin D haddiyon ke liye zaroori hai; ye dhoop se milta hai."
+    }
+  },
+  {
+    "title": "💃 Shastriya Nritya (Classical Dances)",
+    "facts": [
+      "Bharatanatyam: Tamil Nadu ka shastriya nritya.",
+      "Kathak: Uttar Bharat ka shastriya nritya.",
+      "Kathakali: Kerala ka prasiddh nritya.",
+      "Odissi: Odisha ka shastriya nritya.",
+      "Kuchipudi: Andhra Pradesh se sambandhit."
+    ],
+    "quiz": {
+      "question": "Kathakali kis rajya ka shastriya nritya hai?",
+      "options": ["Tamil Nadu", "Kerala", "Odisha", "Uttar Pradesh"],
+      "correct_index": 1,
+      "explanation": "Kathakali Kerala ka prasiddh shastriya nritya hai."
+    }
+  },
+  {
+    "title": "🌍 Vishwa ki Rajdhaniyan (Capitals)",
+    "facts": [
+      "Japan ki rajdhani: Tokyo.",
+      "Australia ki rajdhani: Canberra (Sydney nahi!).",
+      "Canada ki rajdhani: Ottawa.",
+      "USA ki rajdhani: Washington D.C.",
+      "United Kingdom ki rajdhani: London."
+    ],
+    "quiz": {
+      "question": "Australia ki rajdhani kaun si hai?",
+      "options": ["Sydney", "Canberra", "Melbourne", "Perth"],
+      "correct_index": 1,
+      "explanation": "Australia ki rajdhani Canberra hai, Sydney nahi."
+    }
+  },
+  {
+    "title": "🛰️ Antariksh (Space)",
+    "facts": [
+      "Antariksh me jaane wale pehle insaan: Yuri Gagarin (Russia, 1961).",
+      "Chand par kadam rakhne wale pehle insaan: Neil Armstrong (1969, Apollo 11).",
+      "Antariksh me jaane wale pehle Bharatiya: Rakesh Sharma (1984).",
+      "ISRO (Indian Space Research Organisation) ki sthapna 1969 me hui.",
+      "ISRO ka mukhyalay Bengaluru me hai."
+    ],
+    "quiz": {
+      "question": "Antariksh (space) me jaane wale pehle Bharatiya kaun the?",
+      "options": ["Kalpana Chawla", "Rakesh Sharma", "Sunita Williams", "Vikram Sarabhai"],
+      "correct_index": 1,
+      "explanation": "Rakesh Sharma 1984 me antariksh me jaane wale pehle Bharatiya the."
+    }
+  },
+  {
+    "title": "🗣️ Mashhoor Nare (Famous Slogans)",
+    "facts": [
+      "'Jai Jawan Jai Kisan': Lal Bahadur Shastri.",
+      "'Karo ya Maro': Mahatma Gandhi (Quit India, 1942).",
+      "'Inquilab Zindabad': Bhagat Singh ne lokpriya kiya.",
+      "'Tum mujhe khoon do, main tumhe azaadi dunga': Subhash Chandra Bose.",
+      "'Swaraj mera janmsiddh adhikar hai': Bal Gangadhar Tilak."
+    ],
+    "quiz": {
+      "question": "'Jai Jawan Jai Kisan' ka nara kisne diya?",
+      "options": ["Jawaharlal Nehru", "Lal Bahadur Shastri", "Bhagat Singh", "Mahatma Gandhi"],
+      "correct_index": 1,
+      "explanation": "Ye nara Lal Bahadur Shastri ne diya tha."
+    }
+  },
+  {
+    "title": "🕌 Taj Mahal aur Smarak",
+    "facts": [
+      "Taj Mahal Agra (UP) me Yamuna nadi ke kinare hai.",
+      "Ise Mughal badshah Shah Jahan ne apni begum Mumtaz Mahal ki yaad me banwaya.",
+      "Ye safed sangmarmar (white marble) se bana hai.",
+      "Taj Mahal UNESCO World Heritage Site hai.",
+      "Ise duniya ke 7 ajoobon (New 7 Wonders) me gina jata hai."
+    ],
+    "quiz": {
+      "question": "Taj Mahal kisne banwaya tha?",
+      "options": ["Akbar", "Shah Jahan", "Babar", "Aurangzeb"],
+      "correct_index": 1,
+      "explanation": "Shah Jahan ne apni begum Mumtaz Mahal ki yaad me Taj Mahal banwaya."
+    }
+  },
+  {
+    "title": "🌐 Sanyukt Rashtra (United Nations)",
+    "facts": [
+      "UN (United Nations) ki sthapna 24 October 1945 ko hui.",
+      "UN ka mukhyalay New York (USA) me hai.",
+      "Security Council ke 5 sthayi sadasya: USA, Russia, China, UK, France.",
+      "UN ki 6 aadhikarik bhashayein hain (English, Hindi nahi).",
+      "24 October ko 'UN Day' manaya jata hai."
+    ],
+    "quiz": {
+      "question": "Sanyukt Rashtra (UN) ka mukhyalay kahan hai?",
+      "options": ["Geneva", "New York", "Paris", "London"],
+      "correct_index": 1,
+      "explanation": "UN ka mukhyalay New York (USA) me hai."
+    }
+  },
+  {
+    "title": "⚛️ Vigyanik aur Khoj (Scientists)",
+    "facts": [
+      "Gurutvakarshan (Gravity) ke niyam: Isaac Newton.",
+      "E=mc² aur Relativity: Albert Einstein.",
+      "Bijli ka bulb: Thomas Edison.",
+      "Telephone: Alexander Graham Bell.",
+      "Radio: Guglielmo Marconi."
+    ],
+    "quiz": {
+      "question": "Gurutvakarshan (gravity) ke niyam kisne diye?",
+      "options": ["Albert Einstein", "Isaac Newton", "Galileo", "Thomas Edison"],
+      "correct_index": 1,
+      "explanation": "Isaac Newton ne gurutvakarshan ke niyam diye."
+    }
+  },
+  {
+    "title": "❤️ Manav Hriday (Heart)",
+    "facts": [
+      "Hriday (heart) me 4 kaksh (chambers) hote hain.",
+      "Upar ke do: Atria; neeche ke do: Ventricles.",
+      "Universal blood donor: O-negative group.",
+      "Universal recipient: AB group.",
+      "Khoon ko shuddh karne ka kaam fephde (lungs) karte hain."
+    ],
+    "quiz": {
+      "question": "Manav hriday (heart) me kitne kaksh (chambers) hote hain?",
+      "options": ["2", "3", "4", "5"],
+      "correct_index": 2,
+      "explanation": "Hriday me 4 kaksh hote hain — 2 atria aur 2 ventricles."
+    }
+  },
+  {
+    "title": "💰 Bharatiya Arthvyavastha (Economy)",
+    "facts": [
+      "Bharat ke do bade share bazaar: BSE aur NSE — dono Mumbai me.",
+      "Share bazaar ka regulator: SEBI.",
+      "Aam Budget har saal 1 February ko pesh hota hai.",
+      "Bharat ka vittiya varsh (financial year): 1 April se 31 March.",
+      "GST (Goods and Services Tax) 1 July 2017 ko lagu hua."
+    ],
+    "quiz": {
+      "question": "Bharat ka share bazaar 'BSE' kis sheher me hai?",
+      "options": ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+      "correct_index": 1,
+      "explanation": "BSE (Bombay Stock Exchange) Mumbai me hai."
+    }
+  },
+  {
+    "title": "🏆 Olympic Khel",
+    "facts": [
+      "Olympic Games har 4 saal me ek baar hote hain.",
+      "Pehle aadhunik Olympics 1896 me Athens (Greece) me hue.",
+      "Olympic ka chinh: 5 chhalle (rings) — 5 mahadweep.",
+      "Olympic motto: 'Faster, Higher, Stronger'.",
+      "Neeraj Chopra ne 2020 (Tokyo) Olympics me javelin me gold jeeta."
+    ],
+    "quiz": {
+      "question": "Olympic Games kitne saal me ek baar hote hain?",
+      "options": ["2 saal", "3 saal", "4 saal", "5 saal"],
+      "correct_index": 2,
+      "explanation": "Olympic Games har 4 saal me ek baar aayojit hote hain."
+    }
+  },
+  {
+    "title": "🧊 Jheelein (Lakes of India)",
+    "facts": [
+      "Wular Lake (J&K): Bharat ki sabse badi miththe paani (freshwater) ki jheel.",
+      "Chilika Lake (Odisha): sabse badi khare paani ki tatiya jheel (lagoon).",
+      "Dal Lake: Srinagar (Kashmir) ki mashhoor jheel.",
+      "Sambhar Lake (Rajasthan): sabse badi namak (salt) wali jheel.",
+      "Vembanad (Kerala): Bharat ki sabse lambi jheel."
+    ],
+    "quiz": {
+      "question": "Bharat ki sabse badi khare paani ki tatiya jheel (lagoon) kaun si hai?",
+      "options": ["Wular", "Chilika", "Dal", "Sambhar"],
+      "correct_index": 1,
+      "explanation": "Chilika (Odisha) Bharat ki sabse badi khare paani ki lagoon hai."
+    }
+  },
+  {
+    "title": "📏 Bharat ki Seemayein (Borders)",
+    "facts": [
+      "Bharat sabse lambi sthal-seema (land border) Bangladesh se baantta hai (~4096 km).",
+      "Bharat-China seema ko 'McMahon Line' kehte hain.",
+      "Bharat-Pakistan seema ko 'Radcliffe Line' kehte hain.",
+      "Bharat 7 deshon se seema baantta hai.",
+      "Sabse lambi tatrekha (coastline) wala rajya: Gujarat."
+    ],
+    "quiz": {
+      "question": "Bharat sabse lambi sthal-seema (land border) kis desh se baantta hai?",
+      "options": ["China", "Pakistan", "Bangladesh", "Nepal"],
+      "correct_index": 2,
+      "explanation": "Bharat sabse lambi sthal-seema Bangladesh ke saath baantta hai."
+    }
+  },
+  {
+    "title": "🇮🇳 Rashtrapita Mahatma Gandhi",
+    "facts": [
+      "Mahatma Gandhi ka janm 2 October 1869 ko Porbandar (Gujarat) me hua.",
+      "Poora naam: Mohandas Karamchand Gandhi.",
+      "Inhe 'Rashtrapita' aur 'Bapu' kaha jata hai.",
+      "Inke siddhant: Satya (Truth) aur Ahimsa (Non-violence).",
+      "2 October 'Gandhi Jayanti' aur 'International Day of Non-Violence' hai."
+    ],
+    "quiz": {
+      "question": "Mahatma Gandhi ka janm kahan hua tha?",
+      "options": ["Sabarmati", "Porbandar", "Ahmedabad", "Surat"],
+      "correct_index": 1,
+      "explanation": "Mahatma Gandhi ka janm Porbandar (Gujarat) me hua tha."
+    }
+  },
+  {
+    "title": "🌡️ Vigyan: Mapak Yantra (Instruments)",
+    "facts": [
+      "Thermometer: taapmaan (temperature) maapta hai.",
+      "Barometer: vayumandaliya dabav (atmospheric pressure) maapta hai.",
+      "Seismograph: bhukamp (earthquake) ki tibrata maapta hai.",
+      "Speedometer: gaadi ki gati (speed) maapta hai.",
+      "Hygrometer: hava me nami (humidity) maapta hai."
+    ],
+    "quiz": {
+      "question": "Bhukamp (earthquake) ki tibrata kis yantra se maapi jaati hai?",
+      "options": ["Barometer", "Thermometer", "Seismograph", "Hygrometer"],
+      "correct_index": 2,
+      "explanation": "Seismograph se bhukamp ki tibrata maapi jaati hai."
+    }
+  },
+  {
+    "title": "🐯 Vanya Jeev (Wildlife)",
+    "facts": [
+      "Project Tiger 1973 me shuru hua tha.",
+      "Asiatic Lion (Sher) sirf Gir (Gujarat) me paye jate hain.",
+      "Ek-sing wala gainda (Rhino) Kaziranga (Assam) me milta hai.",
+      "Bharat ka rashtriya jalchar (aquatic animal): Ganga Dolphin.",
+      "Jim Corbett Bharat ka pehla National Park hai (Uttarakhand)."
+    ],
+    "quiz": {
+      "question": "Asiatic Lion (Sher) Bharat me kahan paye jate hain?",
+      "options": ["Kaziranga", "Gir (Gujarat)", "Ranthambore", "Sundarban"],
+      "correct_index": 1,
+      "explanation": "Asiatic Lion sirf Gir National Park (Gujarat) me paye jate hain."
+    }
   }
 ]

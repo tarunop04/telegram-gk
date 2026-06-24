@@ -2,9 +2,7 @@ name: Telegram GK Auto Post
 
 on:
   schedule:
-    # Time UTC me hota hai. IST = UTC + 5:30.
-    - cron: "30 3 * * *"   # subah 9:00 IST
-    - cron: "30 12 * * *"  # shaam 6:00 IST
+    - cron: "0 * * * *"     # har 1 ghante me (top of the hour)
   workflow_dispatch:        # manually "Run workflow" button se bhi chala sakte ho
 
 permissions:
