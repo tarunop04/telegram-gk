@@ -32,8 +32,10 @@ Har run me jata hai:
      ```
   3. Output me jo `-100...` wali id dikhe, usse note kar lo.
 
-### Step 4 — Claude API key lo
-- [platform.claude.com](https://platform.claude.com) → API key banao (`sk-ant-...`).
+### Step 4 — AI API key lo
+Do option:
+- **OpenAI (paid):** [platform.openai.com](https://platform.openai.com) → API key (`sk-...`). Account me thode credits daalne padte hain.
+- **Groq (FREE):** [console.groq.com](https://console.groq.com) → free API key (`gsk_...`). Iske saath `OPENAI_BASE_URL=https://api.groq.com/openai/v1` aur `OPENAI_MODEL=llama-3.3-70b-versatile` bhi set karo.
 
 ---
 
@@ -45,7 +47,9 @@ Har run me jata hai:
 
    | Secret name | Value |
    |---|---|
-   | `ANTHROPIC_API_KEY` | tumhari Claude key |
+   | `OPENAI_API_KEY` | OpenAI ya Groq ki key |
+   | `OPENAI_BASE_URL` | Groq use kar rahe ho to `https://api.groq.com/openai/v1` (OpenAI ke liye skip) |
+   | `OPENAI_MODEL` | Groq: `llama-3.3-70b-versatile` (OpenAI ke liye skip) |
    | `TELEGRAM_BOT_TOKEN` | BotFather wala token |
    | `CHANNEL_ID` | `@yourchannel` ya `-100...` |
    | `GROUP_ID` | group ki `-100...` id (na ho to skip) |
@@ -70,10 +74,9 @@ python post.py
 
 ---
 
-## 💰 Cost kam karna ho to
-Default model `claude-opus-4-8` hai (best quality). Sasta chahiye to
-`MODEL=claude-haiku-4-5` set kar do — workflow file me commented line uncomment
-karo, ya secret/env me `MODEL` daal do.
+## 💰 Free vs Paid
+- **FREE:** Groq use karo (`OPENAI_BASE_URL` + `OPENAI_MODEL` set karke). Bilkul free.
+- **Paid:** OpenAI key (best quality), default model `gpt-4o-mini` (bahut sasta). Badalna ho to `OPENAI_MODEL` set karo.
 
 ## ⚙️ Customize
 - **Topic badalna:** `TOPIC` env var set karo (jaise `English Vocabulary` ya `Coding Tips`).

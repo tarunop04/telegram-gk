@@ -1,0 +1,258 @@
+[
+  {
+    "title": "📜 Bharatiya Samvidhan (Constitution)",
+    "facts": [
+      "Samvidhan 26 November 1949 ko adopt hua aur 26 January 1950 ko lagu (effective) hua.",
+      "Drafting Committee ke chairman the Dr. B.R. Ambedkar — inhe 'Samvidhan ke janak' kehte hain.",
+      "Bharat ka Samvidhan duniya ka sabse lamba likhit (written) constitution hai.",
+      "Shuruaat me ismein 395 Articles, 22 Parts aur 8 Schedules the.",
+      "Preamble (Prastavana) me 'We the People of India' likha hai — yani shakti janta ke paas hai."
+    ],
+    "quiz": {
+      "question": "Bharat ka Samvidhan kab lagu (effective) hua?",
+      "options": ["26 November 1949", "26 January 1950", "15 August 1947", "2 October 1950"],
+      "correct_index": 1,
+      "explanation": "26 Jan 1950 ko Samvidhan lagu hua, isi din ko Republic Day manate hain."
+    }
+  },
+  {
+    "title": "🏞️ Bharat ki Nadiyan (Rivers)",
+    "facts": [
+      "Ganga Bharat ki sabse lambi nadi hai (~2525 km), jo Gangotri se nikalti hai.",
+      "Brahmaputra Tibet se shuru hokar Bharat aur Bangladesh me behti hai.",
+      "Godavari South India (peninsular) ki sabse lambi nadi hai.",
+      "Narmada aur Tapti paschim (west) ki taraf Arabian Sea me girti hain.",
+      "Ganga aur Brahmaputra milkar duniya ka sabse bada delta — Sundarban — banati hain."
+    ],
+    "quiz": {
+      "question": "Bharat ki sabse lambi nadi kaun si hai?",
+      "options": ["Yamuna", "Godavari", "Ganga", "Narmada"],
+      "correct_index": 2,
+      "explanation": "Ganga (~2525 km) Bharat ki sabse lambi nadi hai."
+    }
+  },
+  {
+    "title": "🪐 Saur Mandal (Solar System)",
+    "facts": [
+      "Brihaspati (Jupiter) saur mandal ka sabse bada grah hai.",
+      "Budh (Mercury) Sooraj ke sabse paas hai, par sabse garam grah Shukra (Venus) hai.",
+      "Prithvi ka ek hi prakritik upgrah (satellite) hai — Chandrama.",
+      "Sooraj ek taara (star) hai, grah nahi.",
+      "Prakash (light) ki gati lagbhag 3 lakh km/second hoti hai."
+    ],
+    "quiz": {
+      "question": "Saur mandal ka sabse bada grah kaun sa hai?",
+      "options": ["Shani (Saturn)", "Brihaspati (Jupiter)", "Prithvi (Earth)", "Mangal (Mars)"],
+      "correct_index": 1,
+      "explanation": "Brihaspati (Jupiter) saur mandal ka sabse bada grah hai."
+    }
+  },
+  {
+    "title": "🏛️ Bharatiya Sansad (Parliament)",
+    "facts": [
+      "Bharatiya Sansad ke do sadan hain: Lok Sabha aur Rajya Sabha.",
+      "Lok Sabha (lower house) ki adhiktam sankhya 552 hai.",
+      "Rajya Sabha (upper house) ki adhiktam sankhya 250 hai.",
+      "Money Bill (dhan vidheyak) sirf Lok Sabha me hi pesh ho sakta hai.",
+      "Rashtrapati (President) bhi Sansad ka ang (part) maana jaata hai."
+    ],
+    "quiz": {
+      "question": "Money Bill (dhan vidheyak) sabse pehle kis sadan me pesh hota hai?",
+      "options": ["Rajya Sabha", "Lok Sabha", "Dono sadan", "Rashtrapati"],
+      "correct_index": 1,
+      "explanation": "Money Bill sirf Lok Sabha me hi pesh kiya ja sakta hai."
+    }
+  },
+  {
+    "title": "🇮🇳 Rashtriya Pratik (National Symbols)",
+    "facts": [
+      "Rashtriya pashu: Bengal Tiger (Bagh).",
+      "Rashtriya pakshi: Mor (Peacock).",
+      "Rashtriya phool: Kamal (Lotus).",
+      "Rashtriya ped: Bargad (Banyan tree).",
+      "Rashtriya geet 'Vande Mataram' Bankim Chandra Chattopadhyay ne likha."
+    ],
+    "quiz": {
+      "question": "Bharat ka rashtriya pakshi kaun sa hai?",
+      "options": ["Tota", "Mor (Peacock)", "Koyal", "Baaz"],
+      "correct_index": 1,
+      "explanation": "Mor (Peacock) Bharat ka rashtriya pakshi hai."
+    }
+  },
+  {
+    "title": "👤 Bharat ke 'Pehle' (Firsts)",
+    "facts": [
+      "Pehle Pradhan Mantri: Pandit Jawaharlal Nehru.",
+      "Pehle Rashtrapati: Dr. Rajendra Prasad.",
+      "Pehli mahila Pradhan Mantri: Indira Gandhi.",
+      "Pehle Up-Rashtrapati: Dr. S. Radhakrishnan.",
+      "Pehli mahila Rashtrapati: Pratibha Patil."
+    ],
+    "quiz": {
+      "question": "Bharat ke pehle Rashtrapati kaun the?",
+      "options": ["Jawaharlal Nehru", "Dr. S. Radhakrishnan", "Dr. Rajendra Prasad", "Dr. B.R. Ambedkar"],
+      "correct_index": 2,
+      "explanation": "Dr. Rajendra Prasad Bharat ke pehle Rashtrapati the."
+    }
+  },
+  {
+    "title": "🏔️ Parvat aur Chotiyan (Mountains)",
+    "facts": [
+      "Mount Everest (8849 m) duniya ki sabse unchi choti hai (Nepal-China seema).",
+      "K2 duniya ki doosri sabse unchi choti hai.",
+      "Kangchenjunga Bharat ki sabse unchi choti hai (Sikkim).",
+      "Himalaya duniya ki sabse uvi (young) parvat shrinkhla hai.",
+      "Aravalli duniya ki sabse purani parvat shrinkhalaon me se ek hai (Rajasthan)."
+    ],
+    "quiz": {
+      "question": "Duniya ki sabse unchi choti kaun si hai?",
+      "options": ["K2", "Mount Everest", "Kangchenjunga", "Nanda Devi"],
+      "correct_index": 1,
+      "explanation": "Mount Everest (8849 m) duniya ki sabse unchi choti hai."
+    }
+  },
+  {
+    "title": "🦴 Manav Shareer (Human Body)",
+    "facts": [
+      "Vyask (adult) manushya ke shareer me 206 haddiyan (bones) hoti hain.",
+      "Sabse badi haddi: Femur (jaangh ki haddi).",
+      "Sabse chhoti haddi: Stapes (kaan me).",
+      "Manushya me 4 group of blood hote hain: A, B, AB, O.",
+      "Hriday (heart) ek minute me lagbhag 72 baar dhadakta hai."
+    ],
+    "quiz": {
+      "question": "Vyask manushya ke shareer me kitni haddiyan hoti hain?",
+      "options": ["300", "206", "256", "198"],
+      "correct_index": 1,
+      "explanation": "Vyask manushya me 206 haddiyan hoti hain (bachche me zyada hoti hain)."
+    }
+  },
+  {
+    "title": "🎖️ Swatantrata Sangram (Freedom Struggle)",
+    "facts": [
+      "1857 ka vidroh Bharat ka 'Pehla Swatantrata Sangram' kehlata hai.",
+      "Indian National Congress ki sthapna 1885 me hui.",
+      "Bharat Chhodo Andolan (Quit India) 1942 me shuru hua.",
+      "Mahatma Gandhi ne 1930 me Dandi March (Namak Satyagrah) kiya.",
+      "Bharat 15 August 1947 ko swatantra hua."
+    ],
+    "quiz": {
+      "question": "Bharat Chhodo Andolan (Quit India Movement) kis varsh shuru hua?",
+      "options": ["1930", "1942", "1857", "1947"],
+      "correct_index": 1,
+      "explanation": "Bharat Chhodo Andolan 1942 me Mahatma Gandhi ke netritva me shuru hua."
+    }
+  },
+  {
+    "title": "🏦 RBI aur Mudra (Currency)",
+    "facts": [
+      "Reserve Bank of India (RBI) ki sthapna 1 April 1935 ko hui.",
+      "RBI ka mukhyalay (headquarters) Mumbai me hai.",
+      "Bharat ki mudra 'Rupee' hai; iska symbol ₹ 2010 me aaya.",
+      "RBI note chhapne ka kaam karta hai, par 1 rupaye ka note Finance Ministry jaari karta hai.",
+      "RBI ko 'Banker's Bank' bhi kehte hain."
+    ],
+    "quiz": {
+      "question": "RBI (Reserve Bank of India) ka mukhyalay kahan hai?",
+      "options": ["Delhi", "Kolkata", "Mumbai", "Chennai"],
+      "correct_index": 2,
+      "explanation": "RBI ka mukhyalay Mumbai me hai."
+    }
+  },
+  {
+    "title": "🏏 Khel-Kud (Sports)",
+    "facts": [
+      "Cricket ka pehla World Cup 1975 me hua tha.",
+      "Bharat ne Cricket World Cup 1983 (Kapil Dev) aur 2011 (M.S. Dhoni) me jeeta.",
+      "Hockey me Bharat ne Olympics me sabse zyada gold jeete hain.",
+      "Chess ke pehle Bharatiya Grandmaster Vishwanathan Anand the.",
+      "Major Dhyan Chand 'Hockey ke Jaadugar' kehlate hain; unka janmdin (29 Aug) National Sports Day hai."
+    ],
+    "quiz": {
+      "question": "Bharat ne pehli baar Cricket World Cup kab jeeta?",
+      "options": ["1975", "1983", "2011", "1992"],
+      "correct_index": 1,
+      "explanation": "Bharat ne 1983 me Kapil Dev ki kaptani me pehla World Cup jeeta."
+    }
+  },
+  {
+    "title": "🌊 Vishwa Bhugol (World Geography)",
+    "facts": [
+      "Prashant Mahasagar (Pacific Ocean) duniya ka sabse bada mahasagar hai.",
+      "Sahara duniya ka sabse bada garam registan (hot desert) hai.",
+      "Nile aam taur par duniya ki sabse lambi nadi maani jaati hai.",
+      "Asia duniya ka sabse bada mahadweep (continent) hai.",
+      "Russia kshetrafal (area) me duniya ka sabse bada desh hai."
+    ],
+    "quiz": {
+      "question": "Duniya ka sabse bada mahasagar kaun sa hai?",
+      "options": ["Atlantic", "Prashant (Pacific)", "Hind (Indian)", "Arctic"],
+      "correct_index": 1,
+      "explanation": "Prashant Mahasagar (Pacific) duniya ka sabse bada mahasagar hai."
+    }
+  },
+  {
+    "title": "🧪 Vigyan Basics (Science)",
+    "facts": [
+      "Paani ka rasayanik sutra H2O hai.",
+      "Oxygen (O2) saans lene ke liye zaroori hai.",
+      "Common salt (namak) ka sutra NaCl hai.",
+      "Pedh-paudhe photosynthesis se CO2 lekar O2 chhodte hain.",
+      "Manushya ke khoon ka rang laal Haemoglobin (iron) ki wajah se hota hai."
+    ],
+    "quiz": {
+      "question": "Paani (water) ka rasayanik sutra kya hai?",
+      "options": ["CO2", "H2O", "NaCl", "O2"],
+      "correct_index": 1,
+      "explanation": "Paani ka sutra H2O hai (2 hydrogen + 1 oxygen)."
+    }
+  },
+  {
+    "title": "🗺️ Bharat ke Rajya (Indian States)",
+    "facts": [
+      "Kshetrafal (area) me sabse bada rajya: Rajasthan.",
+      "Aabaadi (population) me sabse bada rajya: Uttar Pradesh.",
+      "Kshetrafal me sabse chhota rajya: Goa.",
+      "Bharat me kul 28 rajya aur 8 kendra-shasit pradesh (UTs) hain.",
+      "Sabse zyada rajyon ki seema chhune wala rajya: Uttar Pradesh."
+    ],
+    "quiz": {
+      "question": "Kshetrafal (area) ki drishti se Bharat ka sabse bada rajya kaun sa hai?",
+      "options": ["Madhya Pradesh", "Rajasthan", "Maharashtra", "Uttar Pradesh"],
+      "correct_index": 1,
+      "explanation": "Rajasthan kshetrafal me Bharat ka sabse bada rajya hai."
+    }
+  },
+  {
+    "title": "🏅 Samman aur Puraskar (Awards)",
+    "facts": [
+      "Bharat Ratna desh ka sabse bada nagrik (civilian) samman hai.",
+      "Padma awards: Padma Vibhushan > Padma Bhushan > Padma Shri.",
+      "Param Vir Chakra sabse bada veerta (military, wartime) puraskar hai.",
+      "Dadasaheb Phalke Award cinema ka sabse bada samman hai.",
+      "Khel ka sabse bada samman: Major Dhyan Chand Khel Ratna."
+    ],
+    "quiz": {
+      "question": "Bharat ka sabse bada nagrik (civilian) samman kaun sa hai?",
+      "options": ["Padma Vibhushan", "Bharat Ratna", "Param Vir Chakra", "Padma Shri"],
+      "correct_index": 1,
+      "explanation": "Bharat Ratna desh ka sarvochch nagrik samman hai."
+    }
+  },
+  {
+    "title": "💻 Computer Basics",
+    "facts": [
+      "CPU ko computer ka 'dimaag' (brain) kehte hain.",
+      "RAM ek temporary (volatile) memory hai — bijli jaate hi data mit jata hai.",
+      "WWW (World Wide Web) ke aviष्kारak Tim Berners-Lee hain.",
+      "1 Byte = 8 Bits; 1 KB = 1024 Bytes.",
+      "Computer me sab kuch binary (0 aur 1) me hota hai."
+    ],
+    "quiz": {
+      "question": "Computer ka 'dimaag' (brain) kise kehte hain?",
+      "options": ["RAM", "CPU", "Monitor", "Hard Disk"],
+      "correct_index": 1,
+      "explanation": "CPU (Central Processing Unit) ko computer ka dimaag kehte hain."
+    }
+  }
+]

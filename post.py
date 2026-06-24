@@ -1,20 +1,22 @@
 """
-Telegram GK/Current Affairs auto-poster.
+Telegram GK/Current Affairs auto-poster (OpenAI-compatible).
 
 Flow:
-  1. Claude (claude-opus-4-8) se ek "Daily GK" post + ek quiz question generate karte hain.
+  1. AI (OpenAI ya koi bhi OpenAI-compatible API jaise Groq) se ek "Daily GK"
+     post + ek quiz question generate karte hain.
   2. Post ko Telegram channel aur group dono me bhejte hain.
   3. Quiz ko Telegram ke native poll (quiz mode) ke roop me bhejte hain.
   4. Recent quiz questions history.json me save karte hain taaki repeat na ho.
 
 Environment variables (GitHub Actions secrets ya local .env):
-  ANTHROPIC_API_KEY   - Claude API key
+  OPENAI_API_KEY      - OpenAI ya Groq ki API key
+  OPENAI_BASE_URL     - (optional) Groq ke liye: https://api.groq.com/openai/v1
+  OPENAI_MODEL        - (optional) default: gpt-4o-mini
+                        Groq free model: llama-3.3-70b-versatile
   TELEGRAM_BOT_TOKEN  - BotFather se mila bot token
   CHANNEL_ID          - channel ka @username ya -100... numeric id
   GROUP_ID            - group ka -100... numeric id (optional)
-  MODEL               - (optional) default: claude-opus-4-8
-                        Sasta chahiye to: claude-haiku-4-5
-  TOPIC               - (optional) content ka focus, default neeche SUBJECT me
+  TOPIC               - (optional) content ka focus
 """
 
 import json
@@ -22,7 +24,6 @@ import os
 import sys
 from pathlib import Path
 
-import anthropic
 import requests
 
 
@@ -45,35 +46,18 @@ _load_dotenv()
 # Config
 # ---------------------------------------------------------------------------
 
-MODEL = os.environ.get("MODEL", "claude-opus-4-8")
-SUBJECT = os.environ.get("TOPIC", "Indian GK aur Current Affairs (competitive exams: SSC, UPSC, Banking, Railway)")
+MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
+SUBJECT = os.environ.get(
+    "TOPIC",
+    "Indian GK aur Current Affairs (competitive exams: SSC, UPSC, Banking, Railway)",
+)
 
 HISTORY_FILE = Path(__file__).parent / "history.json"
+BANK_FILE = Path(__file__).parent / "content_bank.json"
+STATE_FILE = Path(__file__).parent / "state.json"
 MAX_HISTORY = 60  # itne purane sawaal yaad rakhte hain repeat rokne ke liye
 
 TELEGRAM_API = "https://api.telegram.org/bot{token}/{method}"
-
-# Claude se structured JSON manga rahe hain — parsing ki tension nahi.
-OUTPUT_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "title": {"type": "string"},
-        "facts": {"type": "array", "items": {"type": "string"}},
-        "quiz": {
-            "type": "object",
-            "properties": {
-                "question": {"type": "string"},
-                "options": {"type": "array", "items": {"type": "string"}},
-                "correct_index": {"type": "integer"},
-                "explanation": {"type": "string"},
-            },
-            "required": ["question", "options", "correct_index", "explanation"],
-            "additionalProperties": False,
-        },
-    },
-    "required": ["title", "facts", "quiz"],
-    "additionalProperties": False,
-}
 
 
 # ---------------------------------------------------------------------------
@@ -97,43 +81,83 @@ def save_history(history):
 
 
 # ---------------------------------------------------------------------------
-# Claude se content generate karna
+# Content source: bina key ke FREE content bank, ya AI (OpenAI/Groq)
 # ---------------------------------------------------------------------------
 
 def generate_content(recent_questions):
-    client = anthropic.Anthropic()  # ANTHROPIC_API_KEY env se uthata hai
+    """OPENAI_API_KEY ho to AI se, warna FREE built-in content bank se."""
+    if os.environ.get("OPENAI_API_KEY"):
+        return generate_with_ai(recent_questions)
+    return pick_from_bank()
+
+
+def pick_from_bank():
+    bank = json.loads(BANK_FILE.read_text(encoding="utf-8"))
+    if not bank:
+        raise RuntimeError("content_bank.json khaali hai")
+    idx = 0
+    if STATE_FILE.exists():
+        try:
+            idx = json.loads(STATE_FILE.read_text(encoding="utf-8")).get("next_index", 0)
+        except json.JSONDecodeError:
+            idx = 0
+    item = bank[idx % len(bank)]
+    STATE_FILE.write_text(
+        json.dumps({"next_index": (idx + 1) % len(bank)}, indent=2),
+        encoding="utf-8",
+    )
+    return item
+
+
+def generate_with_ai(recent_questions):
+    from openai import OpenAI  # sirf AI-mode me zaroorat
+
+    # base_url set ho to Groq/OpenRouter wagairah; warna OpenAI default.
+    client = OpenAI(
+        api_key=os.environ["OPENAI_API_KEY"],
+        base_url=os.environ.get("OPENAI_BASE_URL") or None,
+    )
 
     avoid = "\n".join(f"- {q}" for q in recent_questions[-40:]) or "(abhi tak koi nahi)"
 
-    prompt = f"""Tum ek educational Telegram channel ke liye content bana rahe ho.
-Topic: {SUBJECT}
+    system_msg = (
+        "Tum ek educational Telegram channel ke liye GK content likhne wale expert ho. "
+        "Hamesha valid JSON me jawab dena."
+    )
 
-Ek "Daily GK" post banao jisme:
-- title: ek chhota aakarshak title (emoji ke saath)
-- facts: 5 se 6 useful GK points. Har point Hindi me, par important keyword/naam English me bhi. Crisp rakho.
-- quiz: ek multiple-choice question
-    - question: 300 character se kam
-    - options: bilkul 4 options, har ek 100 character se kam
-    - correct_index: sahi option ka index (0-3)
-    - explanation: 1-2 line me sahi jawab kyun (Hindi)
+    user_msg = f"""Topic: {SUBJECT}
 
-Content factually accurate hona chahiye. Jaane-maane, verifiable facts hi do —
-koi anuman ya galat tareekh/naam mat do.
+Ek "Daily GK" post banao aur SIRF is JSON format me do (aur kuch nahi):
+{{
+  "title": "ek chhota aakarshak title (emoji ke saath)",
+  "facts": ["5 se 6 useful GK points, Hindi me, important keyword/naam English me bhi, crisp"],
+  "quiz": {{
+    "question": "ek MCQ sawaal (300 char se kam)",
+    "options": ["bilkul 4 options, har ek 100 char se kam"],
+    "correct_index": 0,
+    "explanation": "sahi jawab kyun (1-2 line Hindi)"
+  }}
+}}
 
-Ye sawaal pehle aa chuke hain, inhe dobara mat poochho (alag topic/sawaal banao):
+Niyam:
+- Content factually accurate ho. Sirf jaane-maane, verifiable facts. Koi galat tareekh/naam mat do.
+- quiz.options me bilkul 4 options ho.
+- quiz.correct_index 0 se 3 ke beech ho.
+
+Ye sawaal pehle aa chuke hain, inhe dobara mat poochho (alag sawaal banao):
 {avoid}
 """
 
-    resp = client.messages.create(
+    resp = client.chat.completions.create(
         model=MODEL,
-        max_tokens=2000,
-        thinking={"type": "adaptive"},
-        output_config={"format": {"type": "json_schema", "schema": OUTPUT_SCHEMA}},
-        messages=[{"role": "user", "content": prompt}],
+        messages=[
+            {"role": "system", "content": system_msg},
+            {"role": "user", "content": user_msg},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0.9,
     )
-
-    text = next(b.text for b in resp.content if b.type == "text")
-    return json.loads(text)
+    return json.loads(resp.choices[0].message.content)
 
 
 # ---------------------------------------------------------------------------
@@ -170,8 +194,8 @@ def send_text(chat_id, text):
 
 def send_quiz(chat_id, quiz):
     # Telegram limits: question <=300, har option <=100, 2-10 options.
-    options = [opt[:100] for opt in quiz["options"]]
-    correct = quiz["correct_index"]
+    options = [str(opt)[:100] for opt in quiz["options"]][:10]
+    correct = quiz.get("correct_index", 0)
     if not (0 <= correct < len(options)):
         correct = 0
     tg_call("sendPoll", {
@@ -180,7 +204,7 @@ def send_quiz(chat_id, quiz):
         "options": options,
         "type": "quiz",
         "correct_option_id": correct,
-        "explanation": quiz["explanation"][:200],
+        "explanation": quiz.get("explanation", "")[:200],
         "is_anonymous": True,
     })
 
@@ -191,7 +215,8 @@ def send_quiz(chat_id, quiz):
 
 def main():
     history = load_history()
-    print("Claude se content generate kar rahe hain...")
+    mode = f"AI ({MODEL})" if os.environ.get("OPENAI_API_KEY") else "FREE content bank"
+    print(f"Content source: {mode}")
     content = generate_content(history)
 
     post_text = format_post(content)
@@ -214,7 +239,7 @@ def main():
 
     history.append(quiz["question"])
     save_history(history)
-    print("Done ✅")
+    print("Done!")
 
 
 if __name__ == "__main__":

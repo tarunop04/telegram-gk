@@ -27,17 +27,18 @@ jobs:
 
       - name: Generate aur post karo
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}   # Groq free ke liye
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}         # optional
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           GROUP_ID: ${{ secrets.GROUP_ID }}
-          # MODEL: claude-haiku-4-5   # cost kam karna ho to ye uncomment karo
         run: python post.py
 
       - name: history.json wapas save karo
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add history.json
-          git commit -m "Update history [skip ci]" || echo "Koi badlav nahi"
+          git add history.json state.json
+          git commit -m "Update state [skip ci]" || echo "Koi badlav nahi"
           git push || echo "Push skip"
